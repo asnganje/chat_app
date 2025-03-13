@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Chat App" %></title>
+    <title><%= content_for(:title) || "Message me!" %></title>
+    <%= favicon_link_tag 'favicon.png', type: 'image/png'%>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -24,96 +25,7 @@
 
   <body>
     <main class="container mx-auto mt-10 px-5">
-      <nav class="bg-gray-800">
-        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-15">
-          <div class="relative flex h-16 items-center justify-between">
-            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-              <!-- Mobile menu button-->
-              <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false">
-                <span class="absolute -inset-0.5"></span>
-                <span class="sr-only">Open main menu</span>
-                <!--
-                  Icon when menu is closed.
-
-                  Menu open: "hidden", Menu closed: "block"
-                -->
-                <svg class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
-                <!--
-                  Icon when menu is open.
-
-                  Menu open: "block", Menu closed: "hidden"
-                -->
-                <svg class="hidden size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-              <div class="flex shrink-0 items-center">
-                <img class="h-8 w-auto hidden md:block" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
-              </div>
-              <div class="hidden sm:ml-6 sm:block">
-                <div class="flex space-x-4">
-                  <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                  <a href="#" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Home</a>
-                  <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Messages</a>
-                </div>
-              </div>
-            </div>
-            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-              <div class="relative inline-block text-left">
-                  <div>
-                    <button type="button" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-white ring-1 shadow-xs ring-transparent ring-inset hover:bg-transparent" id="menu-button" aria-expanded="true" aria-haspopup="true">
-                      Language
-                      <svg class="-mr-1 size-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-                        <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                      </svg>
-                    </button>
-                  </div>
-
-                  <!--
-                    Dropdown menu, show/hide based on menu state.
-
-                    Entering: "transition ease-out duration-100"
-                      From: "transform opacity-0 scale-95"
-                      To: "transform opacity-100 scale-100"
-                    Leaving: "transition ease-in duration-75"
-                      From: "transform opacity-100 scale-100"
-                      To: "transform opacity-0 scale-95"
-                  -->
-                  <div class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white ring-1 shadow-lg ring-black/5 focus:outline-hidden" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-                    <div class="py-1" role="none">
-                      <!-- Active: "bg-gray-100 text-gray-900 outline-hidden", Not Active: "text-gray-700" -->
-                      <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0">English</a>
-                      <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-1">Spanish</a>
-                      <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-2">India</a>
-                      <form method="POST" action="#" role="none">
-                        <button type="submit" class="block w-full px-4 py-2 text-left text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-3">Sign out</button>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              <!-- Profile dropdown -->
-              <div class="relative ml-3">
-                <button class="bg-blue-600 !py-2 !px-4 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 sm:px-8 sm:py-4">
-                  Sign Up
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mobile menu, show/hide based on menu state. -->
-        <div class="sm:hidden" id="mobile-menu">
-          <div class="space-y-1 px-2 pt-2 pb-3">
-            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="#" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Home</a>
-            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Messages</a>
-          </div>
-        </div>
-      </nav>
+      <%= render 'layouts/navigation' %>
       <%= yield %>
     </main>
   </body>
