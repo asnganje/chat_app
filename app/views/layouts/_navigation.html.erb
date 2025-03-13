@@ -32,7 +32,7 @@
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="#" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Chatroom</a>
+            <%= link_to "Chatroom", root_path, class: "cursor-pointer rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" %>
             <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Messages</a>
           </div>
         </div>
@@ -64,7 +64,7 @@
             >
               <div class="py-1" role="none">
                 <!-- Active: "bg-gray-100 text-gray-900 outline-hidden", Not Active: "text-gray-700" -->
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0">Log In</a>
+                <%= link_to "Login", login_path, class:"block px-4 py-2 text-sm text-gray-700" %>
                 <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-1">Log Out</a>
                 <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-2">Sign Up</a>
               </div>
