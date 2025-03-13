@@ -1,1 +1,50 @@
-<h1 class="text-orange-600 italic text-2xl font-bold">Chatroom Home page!</h1>
+<h1 class="flex flex-col-reverse items-center justify-center font-serif font-semibold text-2xl">
+  Say Something...!
+  <img src="/favicon.png" alt="icon" width: 32 height: 32 class="rounded-full p-1 my-1 border border-gray-100 shadow-sm">
+</h1>
+<div class="flex gap-10 my-5">
+  <div class="w-[80%] border border-gray-300 p-4 shadow rounded">
+    <div class="col-span-2 flex flex-col gap-y-5 py-10">
+      <div>
+        <div>
+          <div>
+            <em>Abdulrahman Nganje</em>:Test message
+          </div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div>
+            <em>Nafistum Abdallah</em>:Test message2
+          </div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div>
+            <em>Asya Abdallah</em>:Test message3
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="extra content">
+      <div>
+        <form>
+          <div class="flex gap-x-5 items-center">
+            <div class="w-full">
+              <input class="border border-gray-500 p-2 rounded w-full" placeholder="Enter a message...">
+            </div>
+            <div class="text-orange-500">
+              <i class="fas fa-edit text-3xl cursor-pointer"></i>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-col space-y-2 border-gray-300 shadow p-4 bg-black w-[20%] rounded-lg">
+      <%= link_to "Home", root_path, class: "block px-4 py-2 text-white rounded-md hover:bg-gray-800 #{"bg-gray-700" if current_page?(root_path)}" %>
+      <%= link_to "Messages", root_path, class: "block px-4 py-2 text-white rounded-md hover:bg-gray-800" %>
+      <%= link_to "Friends", root_path, class: "block px-4 py-2 text-white rounded-md hover:bg-gray-800" %>
+  </div>
+</div>
