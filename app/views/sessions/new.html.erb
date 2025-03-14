@@ -4,23 +4,23 @@
 </div>
 <div class="border border-gray-400 shadow-md rounded-sm p-6 w-full max-w-3xl mx-auto flex">
   <div class="w-1/2 pr-6 flex flex-col items-center">
-    <form class="w-full max-w-xs">
+    <%=form_for(:session, html:{class:"w-full max-w-xs", role:"form"}, url: login_path) do |f|%>
       <div class="flex flex-col mb-3">
-        <label class="mb-1 text-gray-700">Username</label>
+        <%= f.label :username, "Username", class:"mb-1 text-gray-700"%>
         <div class="flex items-center border border-gray-300 rounded-md p-2">
           <i class="fa-solid fa-user text-gray-500 mr-2"></i>
-          <input type="text" class="outline-none w-full" placeholder="Username">
+          <%=f.text_field :username, placeholder:"Username", class:"outline-none w-full"%>
         </div>
       </div>
       <div class="flex flex-col mb-4">
-        <label class="mb-1 text-gray-700">Password</label>
+        <%= f.label :password, "Password", class:"mb-1 text-gray-700"%>
         <div class="flex items-center border border-gray-300 rounded-md p-2">
           <i class="fa-solid fa-lock text-gray-500 mr-2"></i>
-          <input type="password" class="outline-none w-full" placeholder="Password">
+          <%=f.password_field :password, placeholder: "Password", class:"outline-none w-full"%>
         </div>
       </div>
-      <button class="bg-orange-500 flex items-center justify-center p-1 cursor-pointer text-white rounded-md w-1/2 mx-auto">Login</button>
-    </form>
+      <%= f.button "Login",  class:"bg-orange-500 flex items-center justify-center p-1 cursor-pointer text-white rounded-md w-1/2 mx-auto" %>
+    <%end%>
   </div>
   <div class="relative w-0.5 bg-gray-300 h-50 mx-4 flex items-center justify-center">
     <span class="absolute left-1/2 transform -translate-x-1/2 bg-transparent px-2 text-gray-600">OR</span>
