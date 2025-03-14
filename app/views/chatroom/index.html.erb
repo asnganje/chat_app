@@ -4,42 +4,24 @@
 </h1>
 <div class="flex gap-10 my-5">
   <div class="w-[80%] border border-gray-300 p-4 shadow rounded">
-    <div class="col-span-2 flex flex-col gap-y-5 py-10">
+    <div class="flex flex-col gap-y-5 py-10">
+      <% @messages.each do |m| %>
       <div>
-        <div>
-          <div>
-            <em>Abdulrahman Nganje</em>:Test message
-          </div>
-        </div>
+        <em><%= m.user.username %></em>: <%=m.body%>
       </div>
-      <div>
-        <div>
-          <div>
-            <em>Nafistum Abdallah</em>:Test message2
-          </div>
-        </div>
-      </div>
-      <div>
-        <div>
-          <div>
-            <em>Asya Abdallah</em>:Test message3
-          </div>
-        </div>
-      </div>
+      <%end%>
     </div>
-    <div class="extra content">
-      <div>
-        <form>
-          <div class="flex gap-x-5 items-center">
-            <div class="w-full">
-              <input class="border border-gray-500 p-2 rounded w-full" placeholder="Enter a message...">
-            </div>
-            <div class="text-orange-500">
-              <i class="fas fa-edit text-3xl cursor-pointer"></i>
-            </div>
+    <div>
+      <form>
+        <div class="flex gap-x-5 items-center">
+          <div class="w-full">
+            <input class="border border-gray-500 p-2 rounded w-full" placeholder="Enter a message...">
           </div>
-        </form>
-      </div>
+          <div class="text-orange-500">
+            <i class="fas fa-edit text-3xl cursor-pointer"></i>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
   <div class="flex flex-col space-y-2 border-gray-300 shadow p-4 bg-black w-[20%] rounded-lg">
