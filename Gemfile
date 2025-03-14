@@ -66,7 +66,7 @@ gem "tailwindcss-ruby", "~> 4.0"
 
 gem "tailwindcss-rails", "~> 4.2"
 
-gem 'font-awesome-sass', '~> 6.0.0'
+gem 'font-awesome-sass', '~> 6.7.2'
 
 # presents db data in form of a table in rails console
 gem 'hirb'
