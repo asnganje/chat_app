@@ -63,17 +63,20 @@
               tabindex="-1"
             >
               <div class="py-1" role="none">
-                <!-- Active: "bg-gray-100 text-gray-900 outline-hidden", Not Active: "text-gray-700" -->
+                <% if logged_in? %>
+                  <%= link_to "Logout", logout_path, class:"block px-4 py-2 text-sm text-gray-700", data: {
+                      turbo_method: :delete
+                    } %>
+                <%else%>
                 <%= link_to "Login", login_path, class:"block px-4 py-2 text-sm text-gray-700" %>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-1">Log Out</a>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-2">Sign Up</a>
+                <%end%>
               </div>
             </div>
           </div>
         <div class="relative ml-3">
-          <button data-controller="button" data-action="click->button#signer" class="bg-blue-600 !py-2 !px-4 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 sm:px-8 sm:py-4">
-            Sign Up
-          </button>
+          <% if !logged_in?%>
+            <%= link_to "Login", login_path, class:"bg-blue-600 !py-2 !px-4 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 sm:px-8 sm:py-4"%>
+          <%end%>
         </div>
       </div>
     </div>
