@@ -8,16 +8,16 @@
       <%= render @messages %>
     </div>
     <div>
-      <form>
+      <%= form_for(@message, html:{role:"form"}, url:message_path) do |f|%>
         <div class="flex gap-x-5 items-center">
           <div class="w-full">
-            <input class="border border-gray-500 p-2 rounded w-full" placeholder="Enter a message...">
+            <%=f.text_field :body, placeholder:"Enter a message...", class:"border border-gray-500 p-2 rounded w-full" %>
           </div>
           <div class="text-orange-500">
-            <i class="fas fa-edit text-3xl cursor-pointer"></i>
+            <%=f.button '<i class="fas fa-edit text-3xl cursor-pointer"></i>'.html_safe%>
           </div>
         </div>
-      </form>
+        <%end%>
     </div>
   </div>
   <div class="flex flex-col space-y-2 border-gray-300 shadow p-4 bg-black w-[20%] rounded-lg">
